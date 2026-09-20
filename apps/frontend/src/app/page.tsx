@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef, useState } from "react";
-import { Cpu, Github, ExternalLink, Activity } from "lucide-react";
+import { Cpu } from "lucide-react";
 import { SpecForm } from "../components/SpecForm";
 import { GraphTimeline } from "../components/GraphTimeline";
 import { CodeViewer } from "../components/CodeViewer";

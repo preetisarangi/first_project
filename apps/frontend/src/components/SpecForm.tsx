@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Sparkles, Globe, FileText, RefreshCw, Square, CheckCircle2 } from "lucide-react";
+import { Sparkles, Globe, FileText, RefreshCw, Square } from "lucide-react";
 
 interface SpecFormProps {
   onSubmit: (spec: string, targetUrl: string, maxRetries: number) => void;

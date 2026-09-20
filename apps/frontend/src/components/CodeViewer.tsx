@@ -127,15 +127,22 @@ export function CodeViewer({
             <GitCompare className="w-3.5 h-3.5" />
             <span>Patch Diff</span>
             {diff && (
-              <span className="px-1.5 py-0.2 rounded text-[10px] bg-amber-500/20 text-amber-300 ml-1">
+              <span className="px-1.5 py-0.5 rounded text-[10px] bg-amber-500/20 text-amber-300 ml-1">
                 Active
               </span>
             )}
           </button>
         </div>
 
-        {/* Action Buttons */}
+        {/* Action Buttons & Status Badge */}
         <div className="flex items-center gap-1.5">
+          {status !== "idle" && !execution && (
+            <div className="flex items-center gap-1 px-2 py-1 rounded text-xs font-mono bg-indigo-950/40 text-indigo-300 border border-indigo-800/50 uppercase">
+              <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse" />
+              <span>{status}</span>
+            </div>
+          )}
+
           {execution && (
             <div
               className={`flex items-center gap-1 px-2 py-1 rounded text-xs font-mono border ${
