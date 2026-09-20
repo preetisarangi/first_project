@@ -1,0 +1,43 @@
+# ==============================================================================
+# Render Blueprint Configuration (Free Web Service)
+# Docs: https://render.com/docs/blueprint-spec
+# ==============================================================================
+
+services:
+  - type: web
+    name: spec-to-playwright-backend
+    runtime: docker
+    plan: free
+    region: oregon
+    dockerfilePath: apps/backend/Dockerfile
+    dockerContext: apps/backend
+    healthCheckPath: /health
+    autoDeploy: true
+
+    envVars:
+      - key: PORT
+        value: 10000
+
+      - key: SUPABASE_URL
+        sync: false
+
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+
+      - key: GOOGLE_API_KEY
+        sync: false
+
+      - key: OPENROUTER_API_KEY
+        sync: false
+
+      - key: LANGSMITH_API_KEY
+        sync: false
+
+      - key: LANGSMITH_TRACING
+        value: "true"
+
+      - key: LANGSMITH_PROJECT
+        value: "spec-to-test-agent"
+
+      - key: ALLOWED_ORIGINS
+        value: "http://localhost:3000,http://127.0.0.1:3000"
